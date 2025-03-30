@@ -8,7 +8,7 @@ st.title("Customer Behavior Prediction")
 
 # making the input fields here
 st.header("Select the ML model")
-modelType = st.selectbox("Model","Random Forest")
+modelType = st.selectbox("Model",["Random Forest","XGBoost","Neural Network"])
 st.divider()
 customer_id = st.number_input("Customer ID", min_value=0, step=1)
 age = st.number_input("Age",min_value = 0, step = 1)
@@ -22,6 +22,9 @@ returns = st.selectbox("Returns", ["Yes", "No"])
 #based on the user's choice we can select the model we wish to predict with
 if modelType == "Random Forest":
     model = joblib.load("src/models/random_forest_model.pkl")
+elif modelType == "XGBoost":
+    model = joblib.lead("src/models/xgboost_model.pkl")
+    
 
 
 books = clothing = electronics = home = 0
