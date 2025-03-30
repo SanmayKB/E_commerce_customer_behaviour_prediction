@@ -23,7 +23,9 @@ returns = st.selectbox("Returns", ["Yes", "No"])
 if modelType == "Random Forest":
     model = joblib.load("src/models/random_forest_model.pkl")
 elif modelType == "XGBoost":
-    model = joblib.lead("src/models/xgboost_model.pkl")
+    model = joblib.load("src/models/xgboost_model.pkl")
+elif modelType == "Neural Network":
+    model = joblib.load("src/models/neural_network_model.pkl")
     
 
 
